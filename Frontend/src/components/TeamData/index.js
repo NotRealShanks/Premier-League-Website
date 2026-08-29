@@ -18,7 +18,7 @@ const TeamData = () => {
     const nameValue = params.get('name');
     
     if (teamValue) {
-      axios.get(`http://localhost:8080/api/v1/player?team=${encodeURIComponent(teamValue)}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/v1/player?team=${encodeURIComponent(teamValue)}`)
         .then(response => {
           setPlayerData(response.data);
           setLoading(false);
@@ -28,7 +28,7 @@ const TeamData = () => {
           setLoading(false);
         });
     } else if (nationValue){
-      axios.get(`http://localhost:8080/api/v1/player?nation=${encodeURIComponent(nationValue)}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/v1/player?nation=${encodeURIComponent(nationValue)}`)
       .then(response => {
         setPlayerData(response.data);
         setLoading(false);
@@ -38,7 +38,7 @@ const TeamData = () => {
         setLoading(false);
       });
     } else if (positionValue){
-      axios.get(`http://localhost:8080/api/v1/player?position=${encodeURIComponent(positionValue)}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/v1/player?position=${encodeURIComponent(positionValue)}`)
       .then(response => {
         setPlayerData(response.data);
         setLoading(false);
@@ -48,7 +48,7 @@ const TeamData = () => {
         setLoading(false);
       });
     } else if (nameValue){
-      axios.get(`http://localhost:8080/api/v1/player?name=${encodeURIComponent(nameValue)}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/v1/player?name=${encodeURIComponent(nameValue)}`)
       .then(response => {
         setPlayerData(response.data);
         setLoading(false);
